@@ -191,10 +191,7 @@ const First = () => {
           </Menu>
         </Sider>
         <Layout>
-          <Header className="header"
-          
-          
-          >
+          <Header className="header"          >
 
 {React.createElement(collapsed ? MenuUnfoldOutlined : MenuFoldOutlined, {
             className: 'trigger',

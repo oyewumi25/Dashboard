@@ -15,7 +15,7 @@ const Reservation = () => (
     </div>
     <div>
       <h2 style={contentStyle}>Resrvation en ligne parfaitement sécurisée! 👌 </h2>
-    </div>
+    </div>Z
   </Carousel>
 );
 

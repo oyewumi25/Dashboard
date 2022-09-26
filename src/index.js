@@ -7,7 +7,7 @@ import { createStore } from "redux";
 import { Provider } from "react-redux";
 import rootReducer from "./components/store/reducer";
 import secureLocalStorage from "react-secure-storage";
-import Login from "../src/components/tabs/Login"
+import First from "../src/components/tabs/First"
 
 
 function saveToLocalStorage(state) {
@@ -47,8 +47,7 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
   <Provider store={store}>
-    {/* <App /> */}
-    <Login/>
+    <App />
   </Provider>
 );
 

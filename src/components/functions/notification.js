@@ -7,4 +7,4 @@ const openNotification = (type) => {
   });
 };
 
-export default {openNotification };
+export default {openNotification};
