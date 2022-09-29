@@ -1,10 +1,11 @@
 import { notification} from 'antd';
 
-const openNotification = (type) => {
+const openNotification = (type,text) => {
   notification[type]({
     message: 'Notification Title',
-    description:'',
+    description: text,
+    duration : 4
   });
 };
 
-export default {openNotification};
+export  {openNotification};

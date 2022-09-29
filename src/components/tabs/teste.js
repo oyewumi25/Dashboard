@@ -1,26 +1,23 @@
-import React from "react";
+import React, { Component } from "react";
 import { Layout, Menu } from "antd";
 import { listMenu } from "./listMenu";
 import { Link, Route } from "react-router-dom";
-// import {
-//     MenuFoldOutlined,
-//     MenuUnfoldOutlined,
-    
-//   } from '@ant-design/icons';
+import { Button } from 'antd';
+import { sessionHandler } from "../store/sessionStore";
+import {  PoweroffOutlined } from '@ant-design/icons';
+import {  removeUserData } from "../store/actions";
+import { connect } from "react-redux";
+
 import "../Style.css"
 import 'antd/dist/antd.css'
 
 const { Sider, Header, Content, Footer } = Layout;
 
-
-
-
-function Home() {
-    // const [collapsed, setCollapsed] = useState(false);
+class Home extends Component {
+  render() { 
   return (
     <div>
       <Layout style={{ minHeight: "100vh" }}>
-        {/* add logo */}
         <Sider>
           <div style={{ height: 100 }}></div>
           <Menu theme="dark" mode="inline" defaultSelectedKeys={["0"]}>
@@ -32,15 +29,20 @@ function Home() {
           </Menu>
         </Sider>
         <Layout>
-          <Header className="header"
-          
-          >
-            {/* {React.createElement(collapsed ? MenuUnfoldOutlined : MenuFoldOutlined, {
-            className: 'trigger',
-            onClick: () => setCollapsed(!collapsed),
-          })} */}
-
+          <Header className="header">
             <div className="logo" />
+            <Link 
+            to="/"
+            style={{textdecoration:"none",color:"white"}}
+            onClick={async()=>{
+              await this.props.deleteData();
+              return sessionHandler("auth_token",null,"remove");
+            }}
+            >  
+            < PoweroffOutlined 
+            style={{height:"100%",width:"100",float:"right",color:"white",marginTop:40,marginLeft:"20"}}
+            />
+            </Link> 
             <Menu theme="dark" mode="horizontal" />
           </Header>
 
@@ -52,8 +54,24 @@ function Home() {
           <Footer style={{ textAlign: "center" }}>Powered by Xearth </Footer>
         </Layout>
       </Layout>
+      <div></div>
     </div>
   );
+  };
 }
+const mapStateToProps = (state) => {
+  return {};
+};
 
-export default Home;
+const mapDispatchStoreToProps = (dispatch) => {
+  return {
+    deleteData: (data) => {
+      dispatch( removeUserData (data));
+    }
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchStoreToProps)(Home);
+
+
+

@@ -7,7 +7,7 @@ import { createStore } from "redux";
 import { Provider } from "react-redux";
 import rootReducer from "./components/store/reducer";
 import secureLocalStorage from "react-secure-storage";
-import First from "../src/components/tabs/First"
+
 
 
 function saveToLocalStorage(state) {
