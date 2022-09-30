@@ -1,6 +1,6 @@
 
 import React, { Component } from "react";
-import { Card, Input, Space, Alert } from "antd";
+import { Card, Input, Space} from "antd";
 import { DisplayButton } from "../librairy/Button";
 import { validatorConnect } from "../functions/validator-connect";
 import { sessionHandler } from "../functions/sessionStore";
