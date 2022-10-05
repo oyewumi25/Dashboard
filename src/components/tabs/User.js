@@ -168,7 +168,8 @@ class User extends Component {
           <Tag color={"blue"}>
             {
               text.map(item=><div>
-                {"Question: " + item?.q}
+                {"Question: " + item?.Q}<br/>
+                {"Reponse: " + item?.A1}
               </div>)
             }
           </Tag>
